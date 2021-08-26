@@ -11,7 +11,7 @@ cols = 10
 blockSize = 30
 gridPosition = Vector2((resolution.x - gridResolution.x) // 2, resolution.y - gridResolution.y)
 WIN = pygame.display.set_mode((int(resolution.x), int(resolution.y)))
-pygame.display.set_caption("FLAPPY BIRD!")
+pygame.display.set_caption("TETRIS")
 gameWin = pygame.Rect(int(gridPosition.x), int(gridPosition.y), int(gridResolution.x), int(gridResolution.y))
 
 grid = []
@@ -156,10 +156,10 @@ def drawGameText(score, lastScores):
     
     font = pygame.font.SysFont("comicsans", 50)
     scoreText = font.render("SCORE", 1, (255, 255, 255))
-    WIN.blit(scoreText, (int(gridPosition.x - gridResolution.x / 2 - (scoreText.get_width() / 2)), int(resolution.y / 2 - 70)))
+    WIN.blit(scoreText, (int(gridPosition.x - gridResolution.x / 2 - (scoreText.get_width() / 2)), int(resolution.y / 2 - 90)))
     
     scoreNumberText = font.render(str(score), 1, (255, 255, 255))
-    WIN.blit(scoreNumberText, (int(gridPosition.x - gridResolution.x / 2 - (scoreNumberText.get_width() / 2)), int(resolution.y / 2)))
+    WIN.blit(scoreNumberText, (int(gridPosition.x - gridResolution.x / 2 - (scoreNumberText.get_width() / 2)), int(resolution.y / 2) - 25))
     
     nextText = font.render(("Next"), 1, (255, 255, 255))
     WIN.blit(nextText, (int(resolution.x / 2 + gridResolution.x - (nextText.get_width() / 2) + 27), int(resolution.y / 2 - 90)))
@@ -192,7 +192,7 @@ def main():
     currentScore = 0
     currentPiece = getNewPiece(4, -1)
     nextPiece = getNewPiece(14.5, 7)
-    fallSpeedLimit = 0.1
+    fallSpeedLimit = 0.2
     initialFallSpeed = 0.6
     fallSpeed = initialFallSpeed
     fallTime = 0
