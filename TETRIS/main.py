@@ -250,7 +250,6 @@ def main():
             grid.clear()
             lastScores.append(currentScore)
             lastScores.sort(reverse=True)
-            print("final score", currentScore)
             currentScore = 0
             gameDuration = 0
         drawWindow(currentPiece, nextPiece, grid, currentScore, lastScores)
